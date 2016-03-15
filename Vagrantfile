@@ -5,6 +5,11 @@
 # configures the configuration version (we support older styles for
 # backwards compatibility). Please don't change it unless you know what
 # you're doing.
+#Provision script
+$meta = <<SCRIPT
+curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
+chmod 755 msfinstall && ./msfinstall
+SCRIPT
 
 Vagrant.configure(2) do |config|
   # The most common configuration options are documented and commented below.
@@ -69,10 +74,6 @@ Vagrant.configure(2) do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  $meta = <<SCRIPT
-  curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
-  chmod 755 msfinstall && ./msfinstall
-  SCRIPT
 
     config.vm.provision "shell", inline: $meta
 
