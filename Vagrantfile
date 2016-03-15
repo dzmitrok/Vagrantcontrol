@@ -12,7 +12,7 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "Vitalii Malyshev"
+  config.vm.box = "ubuntu/trusty64"
 
   # The hostname the machine should have. Defaults to nil. If nil,
   # Vagrant won't manage the hostname. If set to a string, the hostname will be set on boot.
