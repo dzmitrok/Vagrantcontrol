@@ -25,7 +25,7 @@ end
   config.vm.define "db" do |db|
     db.vm.hostname = "evbyminw1939debian"
     db.vm.box = "debian/jessie64"
-    db.vm.network "forwarded_port", guest: 80, host: 8080
+    db.vm.network "forwarded_port", guest: 80, host: 8081
     db.vm.box_check_update = true
     db.vm.synced_folder ".", "/vagrant", type: "virtualbox", disabled: false
 	db.vm.provider "virtualbox" do |vb|
