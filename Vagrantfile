@@ -10,11 +10,11 @@ Vagrant.configure(2) do |config|
 #define FrontEnd
   config.vm.define "web" do |ubuntu|
     ubuntu.vm.hostname = "evbyminw1939Ubuntu"
-    ubuntu.vm.box = ""ubuntu/trusty64""
+    ubuntu.vm.box = "ubuntu/trusty64"
     ubuntu.vm.network "forwarded_port", guest: 80, host: 8080
     ubuntu.vm.box_check_update = true
     ubuntu.vm.synced_folder ".", "/vagrant", type: "virtualbox", disabled: false
-    ubuntu.vm.provider"virtualbox" do |vb|
+    ubuntu.vm.provider "virtualbox" do |vb|
 	vb.gui = false
    	vb.memory = "1024"
     end
@@ -28,7 +28,7 @@ end
     db.vm.network "forwarded_port", guest: 80, host: 8080
     db.vm.box_check_update = true
     db.vm.synced_folder ".", "/vagrant", type: "virtualbox", disabled: false
-	db.vm.provider"virtualbox" do |vb|
+	db.vm.provider "virtualbox" do |vb|
 	vb.gui = false
    	vb.memory = "1024"
   end
