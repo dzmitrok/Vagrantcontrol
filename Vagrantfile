@@ -28,7 +28,7 @@ Vagrant.configure(2) do |config|
     ubuntu.vm.synced_folder ".", "/vagrant", type: "virtualbox", disabled: false
         ubuntu.vm.provider "virtualbox" do |vb|
 	      vb.gui = false
-   	    vb.memory = "1024"
+   	    vb.memory = "2048"
         end
     ubuntu.vm.provision "shell", inline: $meta
 end
@@ -42,7 +42,7 @@ end
     db.vm.synced_folder ".", "/vagrant", type: "virtualbox", disabled: false
 	     db.vm.provider "virtualbox" do |vb|
 	     vb.gui = false
-   	   vb.memory = "1024"
+   	   vb.memory = "4096"
        end
     db.vm.provision "shell", inline: $KerDev
   end
